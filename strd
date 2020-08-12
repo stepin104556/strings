@@ -1,0 +1,19 @@
+SRC = unity/unity.c\
+src/string.c\
+test/test_string.c\
+main.c
+
+INC = -Iunity\
+-Iinc\
+-Itest
+
+PROJECT_NAME = string.out
+
+$(string.out): $(string.c)
+	gcc $(string.c) $(INC) -o $(string.out)
+
+run:$(string.out)
+	./${string.out}
+doc:
+	make -C documentation
+
